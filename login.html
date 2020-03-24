@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="css/style.css" rel="stylesheet">
+
+<title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+  body {
+  	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="header">
+ <img src="img/logo.png" style="width: 20%">
+  <p></p>
+</div>
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="Kontak.html">Kontak</a>
+  <a href="Login.html" class="right">Login</a>
+    <a href="register.html" class="right">register</a>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<table id="myTable">
+  <tr class="header2">
+    <th style="width:60%;">Nama</th>
+    <th style="width:40%;">Kota</th>
+  </tr>
+  <tr>
+    <td>Tansah Prayoga</td>
+    <td>Cilacap</td>
+  </tr>
+  <tr>
+    <td>Steven Ray</td>
+    <td>Cirebon</td>
+  </tr>
+  <tr>
+    <td>Vinsentius Ardi P</td>
+    <td>Semarang</td>
+  </tr>
+  <tr>
+    <td>Mathias Purwoko</td>
+    <td>Purwokerto</td>
+  </tr>
+  <tr>
+    <td>Roihan Firdaus A</td>
+    <td>Banjarnegara</td>
+  </tr>
+  <tr>
+    <td>Yehezkiel Nicolas</td>
+    <td>Kelampok</td>
+  </tr>
+</table>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<div class="footer">
+  <h3>Copyright©2020</h3>
+</div>
+</body>
+</html>
